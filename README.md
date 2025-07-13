@@ -18,7 +18,7 @@ Building powerful AI agents is more than just connecting to an LLM. Developers f
 
 ## 💡 The Solution
 
-**MCP-Agent-Accelerator** provides a foundation that handles the complex infrastructure, allowing you to focus on what matters: your agent's unique logic and business value.
+**MCP-Agent-Accelerator** provides a foundation that handles the complex infrastructure, allowing you to focus on your agent's unique logic and business value.
 
 ---
 
