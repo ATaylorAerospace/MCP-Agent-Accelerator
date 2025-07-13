@@ -1,27 +1,40 @@
-## Overview
+# 🤖 MCP-Agent-Accelerator
 
-The **MCP-Agent-Accelerator** repository provides a starter framework to build AI agents that leverage the Model Context Protocol (MCP) to interact with various services and data sources. It simplifies the creation of intelligent agents capable of performing complex workflows by integrating with MCP servers.
+A practical starter framework for building AI agents with the [Model Context Protocol (MCP)](https://www.anthropic.com/news/model-context-protocol). Create agents that can actually interact with your tools and data sources through standardized connectors.
 
----
+> 🔒 **Currently private** - will be open sourced soon
 
-## Key Features
+## What it does
 
-- Easy integration with MCP servers for accessing external tools and data.
-- Supports multi-agent orchestration and composable workflows.
-- Built with TypeScript and Python compatibility.
-- Includes example agents to demonstrate GitHub repository management.
-- Designed for extensibility and rapid development of AI-powered automation.
+Build AI agents that can:
+- 📁 Manage GitHub repositories (PRs, issues, code reviews)
+- 🔗 Connect to databases, APIs, and business tools via MCP servers
+- 🤝 Work together in multi-agent workflows
+- ⚡ Automate repetitive tasks across your tech stack
 
----
+## Features
 
-## Getting Started
+- Easy MCP server integration
+- Multi-agent orchestration support  
+- TypeScript and Python compatibility
+- Example agents included
+- Extensible architecture
 
-### Prerequisites
+## Coming soon
 
-- Node.js 14+
-- Python 3.8+
-- GitHub personal access token (for GitHub MCP integration)
-- OpenAI API key (or other supported LLM provider)
+- 🎨 Visual workflow builder
+- 📊 Analytics dashboard
+- 🏢 Enterprise connectors (Slack, Jira, etc.)
+- ☁️ Cloud deployment options
 
-### Installation
-Coming Soon
+## Prerequisites
+
+- Node.js 18+
+- Python 3.9+
+- GitHub token
+- LLM API key (OpenAI, Anthropic, etc.)
+
+## Installation
+
+```bash
+# Available when we go public
