@@ -8,7 +8,7 @@ A production ready framework for building AI agents using the [Model Context Pro
 
 ## 🤔 The Problem
 
-Building powerful AI agents is more than just connecting to an LLM. Developers face significant hurdles when trying to make agents interact with real world tools:
+Building AI agents is more than just connecting to an LLM. Developers face significant hurdles when trying to make agents interact with real world tools:
 - **Complex Connections:** Every new tool requires a custom, brittle integration.
 - **Coordination Chaos:** Making multiple agents work together is a major challenge.
 - **Production Pitfalls:** Moving from a simple demo to a reliable, production-grade system is difficult.
