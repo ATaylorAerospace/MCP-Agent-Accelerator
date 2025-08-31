@@ -61,7 +61,7 @@ await reviewTeam.execute("review-pr", { repo: "my-org/project", pr: 123 });
 ## 🏁 Getting Started
 
 ### Prerequisites
-- ✅ Node.js 18+ or Python 3.9+
+- ✅ Node.js 18+ or Python
 - ✅ GitHub Token
 - ✅ LLM API Key (OpenAI, Anthropic, etc.)
 - ✅ Docker (Optional)
@@ -84,7 +84,7 @@ This project aims to establish the best production grade patterns for the entire
 - **New Connectors:** Help us integrate with more tools.
 - **Orchestration Patterns:** Share your workflow ideas.
 - **Examples & Docs:** Improve the developer experience.
-- **Performance Tuning:** Make the framework faster and more efficient.
+- **Performance Tuning:** Make the framework faster and MUCH more efficient.
 
 ---
 
