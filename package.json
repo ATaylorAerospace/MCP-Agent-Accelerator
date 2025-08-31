@@ -1,4 +1,5 @@
-﻿{
+#
+{
   "name": "mcp-agent-accelerator",
   "version": "0.1.0",
   "description": "A flexible framework that helps AI agents connect seamlessly with real world data and tools using the Model Context Protocol",
