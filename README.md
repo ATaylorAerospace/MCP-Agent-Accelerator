@@ -1,4 +1,9 @@
- 🤖 MCP-Agent-Accelerator 🚀
+ ###🤖 MCP-Agent-Accelerator 🚀
+
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Stars](https://img.shields.io/github/stars/ATaylorAerospace/MCP-Agent-Accelerator?style=social)]
+[![Language](https://img.shields.io/badge/Languages-TypeScript%20%7C%20Python%20%7C%20Dockerfile-brightgreen)](https://github.com/ATaylorAerospace/MCP-Agent-Accelerator)
+
 
 A production ready framework for building AI agents using the [Model Context Protocol (MCP)](https://www.anthropic.com/news/model-context-protocol). This accelerator eliminates integration boilerplate and provides for robust agent orchestration.
 
@@ -94,5 +99,5 @@ Built on proven, design patterns, the framework features a modular architecture 
 
 ---
 
-**Status**: Active Development | **License**: MIT
+
 
