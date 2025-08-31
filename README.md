@@ -1,4 +1,4 @@
- ###🤖 MCP-Agent-Accelerator 🚀
+ ### 🤖 MCP-Agent-Accelerator 🚀
 
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Stars](https://img.shields.io/github/stars/ATaylorAerospace/MCP-Agent-Accelerator?style=social)]
