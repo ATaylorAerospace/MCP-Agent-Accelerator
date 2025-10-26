@@ -1,9 +1,8 @@
- ### 🤖 MCP-Agent-Accelerator 🚀
+# 🤖 MCP-Agent-Accelerator 🚀
 
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Stars](https://img.shields.io/github/stars/ATaylorAerospace/MCP-Agent-Accelerator?style=social)]
+[![Stars](https://img.shields.io/github/stars/ATaylorAerospace/MCP-Agent-Accelerator?style=social)](https://github.com/ATaylorAerospace/MCP-Agent-Accelerator)
 [![Language](https://img.shields.io/badge/Languages-TypeScript%20%7C%20Python%20%7C%20Dockerfile-brightgreen)](https://github.com/ATaylorAerospace/MCP-Agent-Accelerator)
-
 
 A production ready framework for building AI agents using the [Model Context Protocol (MCP)](https://www.anthropic.com/news/model-context-protocol). This accelerator eliminates integration boilerplate and provides for robust agent orchestration.
 
@@ -14,6 +13,7 @@ A production ready framework for building AI agents using the [Model Context Pro
 ## 🤔 The Problem
 
 Building AI agents is more than just connecting to an LLM. Developers face significant hurdles when trying to make agents interact with real world tools:
+
 - **Complex Connections:** Every new tool requires a custom, brittle integration.
 - **Coordination Chaos:** Making multiple agents work together is a major challenge.
 - **Production Pitfalls:** Moving from a simple demo to a reliable, production-grade system is difficult.
@@ -66,19 +66,27 @@ await reviewTeam.execute("review-pr", { repo: "my-org/project", pr: 123 });
 ## 🏁 Getting Started
 
 ### Prerequisites
-- ✅ Node.js 18+ or Python
+
+- ✅ Node.js 18+
 - ✅ GitHub Token
 - ✅ LLM API Key (OpenAI, Anthropic, etc.)
 - ✅ Docker (Optional)
 
 ### Installation
+
 ```bash
-# Available with public release
-npm install mcp-agent-accelerator
-```
-```bash
-# Available with public release
-pip install mcp-agent-accelerator
+# Clone the repository
+git clone https://github.com/ATaylorAerospace/MCP-Agent-Accelerator.git
+cd MCP-Agent-Accelerator
+
+# Install dependencies
+npm install
+
+# Build the project
+npm run build
+
+# Run tests
+npm test
 ```
 
 ---
@@ -86,6 +94,7 @@ pip install mcp-agent-accelerator
 ## 🙏 Contributing
 
 This project aims to establish the best production grade patterns for the entire MCP ecosystem. We welcome contributions of all kinds
+
 - **New Connectors:** Help us integrate with more tools.
 - **Orchestration Patterns:** Share your workflow ideas.
 - **Examples & Docs:** Improve the developer experience.
@@ -98,6 +107,7 @@ This project aims to establish the best production grade patterns for the entire
 Built on proven, design patterns, the framework features a modular architecture that allows for selective adoption of components. It enforces a clean separation of concerns between agent logic, tool integration, and orchestration layers, making your codebase clean and maintainable.
 
 ---
+
 
 
 
