@@ -1,12 +1,13 @@
-﻿# Dependencies
+# Dependencies
 node_modules/
-*.pnp
-.pnp.js
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# Production builds
+# Build outputs
 dist/
 build/
-lib/
+*.tsbuildinfo
 
 # Environment variables
 .env
@@ -15,34 +16,23 @@ lib/
 .env.test.local
 .env.production.local
 
-# Python
-__pycache__/
-*.py[cod]
-*.class
-*.so
-.Python
-
-# IDE
+# IDE files
 .vscode/
 .idea/
 *.swp
 *.swo
 
-# OS
+# OS files
 .DS_Store
 Thumbs.db
 
 # Logs
-logs
+logs/
 *.log
-npm-debug.log*
 
-# API Keys & Tokens
-*.key
-*.pem
-config/secrets.json
+# Coverage reports
+coverage/
+.nyc_output/
 
-# MCP specific
-mcp-data/
-agent-logs/
-temp-workspaces/
+# Jest cache
+.jest/
