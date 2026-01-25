@@ -6,7 +6,7 @@
 
 A production ready framework for building AI agents using the [Model Context Protocol (MCP)](https://www.anthropic.com/news/model-context-protocol). This accelerator eliminates integration boilerplate and provides for robust agent orchestration.
 
-> 🚧 **Status:** Core framework is stable.
+> 🚧 **Status:** Core framework is stable
 
 ---
 
