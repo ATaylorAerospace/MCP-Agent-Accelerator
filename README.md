@@ -42,23 +42,32 @@ Building AI agents is more than just connecting to an LLM. Developers face signi
 - **Protocols:** MCP, gRPC, REST
 - **AI Providers:** OpenAI, Anthropic and more.
 - **Infrastructure:** Docker, Kubernetes
+- **Logging:** Winston (structured JSON logging)
+- **Testing:** Jest with ts-jest
 
 ---
 
 ## ▶️ Example Usage
 
-Here's a quick look at how you can orchestrate a team of agents for a code review task:
+Here's a quick look at how you can configure servers and run an agent workflow:
 
 ```typescript
-// Define a multi-agent code review workflow
-const reviewTeam = new AgentOrchestrator([
-  new Agent({ name: "security-scanner", servers: ["github", "sonarqube"] }),
-  new Agent({ name: "style-checker", servers: ["github", "eslint"] }),
-  new Agent({ name: "test-validator", servers: ["github", "jest"] })
-]);
+import AgentAccelerator, { ServerConfig, WorkflowOptions } from './src/main';
 
-// Execute the workflow on a specific pull request
-await reviewTeam.execute("review-pr", { repo: "my-org/project", pr: 123 });
+// Define MCP server configurations
+const servers: ServerConfig[] = [
+  { name: "github" },
+  { name: "sonarqube", url: "http://localhost:9000" },
+  { name: "eslint" },
+  { name: "jest" }
+];
+
+// Initialize, register servers, and run a workflow
+const accelerator = new AgentAccelerator();
+accelerator.registerServers(servers);
+
+const options: WorkflowOptions = { timeout: 30000, retries: 3 };
+accelerator.runWorkflow("code-review-workflow", options);
 ```
 
 ---
@@ -68,6 +77,7 @@ await reviewTeam.execute("review-pr", { repo: "my-org/project", pr: 123 });
 ### Prerequisites
 
 - ✅ Node.js 18+
+- ✅ npm 8+
 - ✅ GitHub Token
 - ✅ LLM API Key (OpenAI, Anthropic, etc.)
 - ✅ Docker (Optional)
@@ -79,14 +89,20 @@ await reviewTeam.execute("review-pr", { repo: "my-org/project", pr: 123 });
 git clone https://github.com/ATaylorAerospace/MCP-Agent-Accelerator.git
 cd MCP-Agent-Accelerator
 
-# Install dependencies
+# Install dependencies (uses npm ci for reproducible installs)
 npm install
+
+# Type-check without emitting files
+npm run typecheck
 
 # Build the project
 npm run build
 
 # Run tests
 npm test
+
+# Run tests with coverage report
+npm run test:coverage
 ```
 
 ---
