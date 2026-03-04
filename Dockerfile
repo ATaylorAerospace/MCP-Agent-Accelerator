@@ -1,53 +1,51 @@
-# Use a multi-stage build to create a lean final image
-# This allows us to build TypeScript and install Python dependencies in separate stages.
+# Multi-stage build: TypeScript compilation and Python dependencies built
+# separately, then combined into a minimal production image.
 
 # --- Stage 1: Build the TypeScript/Node.js application ---
 FROM node:18-alpine AS builder-node
 WORKDIR /app
 
-# Copy package files and install dependencies
-# This layer is cached as long as package*.json doesn't change
+# Install dependencies using ci for reproducible, locked installs
 COPY package*.json ./
-RUN npm install
+RUN npm ci
 
-# Copy the rest of the source code and build the project
 COPY . .
-# Assumes a 'build' script in package.json that compiles TS to JS in a /dist folder
-RUN npm run build 
+RUN npm run build
 
-# --- Stage 2: Setup the Python environment ---
+# --- Stage 2: Install Python dependencies ---
 FROM python:3.9-slim AS builder-python
 WORKDIR /app
 
-# Install Python dependencies
-# This layer is cached as long as requirements.txt doesn't change
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir --user -r requirements.txt
 
-# Copy Python source code
 COPY ./src ./src
 
-# --- Stage 3: Final Production Image ---
+# --- Stage 3: Final production image ---
 FROM node:18-alpine
 WORKDIR /app
 
-# Set environment to production for security and performance
 ENV NODE_ENV=production
 
-# Copy Node.js dependencies from the builder stage
-COPY --from=builder-node /app/package*.json ./
-COPY --from=builder-node /app/node_modules ./node_modules
+# Create a non-root user for security
+RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 
-# Copy the compiled TypeScript code from the builder stage
+# Copy only production Node.js dependencies to reduce image size
+COPY --from=builder-node /app/package*.json ./
+RUN npm ci --omit=dev
+
+# Copy compiled application
 COPY --from=builder-node /app/dist ./dist
 
-# Copy Python dependencies and source code from the Python builder stage
-COPY --from=builder-python /usr/local/lib/python3.9/site-packages/ /usr/local/lib/python3.9/site-packages/
+# Copy Python dependencies installed to user site-packages
+COPY --from=builder-python /root/.local /home/appuser/.local
 COPY --from=builder-python /app/src ./src
 
-# Expose the application port (e.g., 3000)
+# Transfer ownership to non-root user
+RUN chown -R appuser:appgroup /app /home/appuser/.local
+
+USER appuser
+
 EXPOSE 3000
 
-# Command to run the application
-# This will likely be a script that starts the main server.
-CMD [ "node", "dist/main.js" ]
+CMD ["node", "dist/main.js"]

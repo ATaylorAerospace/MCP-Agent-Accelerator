@@ -36,3 +36,11 @@ coverage/
 
 # Jest cache
 .jest/
+
+# npm pack output
+*.tgz
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
