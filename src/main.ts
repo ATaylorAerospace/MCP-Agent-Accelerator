@@ -1,50 +1,94 @@
 /**
  * MCP-Agent-Accelerator
- * 
+ *
  * Main entry point for the agent accelerator framework.
- * This file will initialize and export the core components.
- * 
+ * Initializes and exports core components.
+ *
  * @version 0.1.0
  * @status Pre-alpha
  */
 
-// Placeholder for the core accelerator class
+import { createLogger, format, transports, Logger } from 'winston';
+
+export interface ServerConfig {
+  name: string;
+  url?: string;
+  options?: Record<string, unknown>;
+}
+
+export interface WorkflowOptions {
+  timeout?: number;
+  retries?: number;
+}
+
+const logger: Logger = createLogger({
+  level: process.env.LOG_LEVEL ?? 'info',
+  format: format.combine(
+    format.timestamp(),
+    format.errors({ stack: true }),
+    format.json()
+  ),
+  transports: [new transports.Console()],
+});
+
 class AgentAccelerator {
+  private readonly servers: Map<string, ServerConfig> = new Map();
+
   constructor() {
-    console.log("🚀 MCP-Agent-Accelerator instance created.");
-    console.log("🚧 Core logic and features are currently under development.");
+    logger.info('MCP-Agent-Accelerator instance created');
+    logger.warn('Core logic and features are currently under development');
   }
 
   /**
-   * (Coming Soon) Method to register and configure MCP servers.
+   * Register and configure MCP servers.
+   * @param configs - Array of server configurations to register
    */
-  public registerServers() {
-    console.warn("`registerServers` method is not yet implemented.");
+  public registerServers(configs: ServerConfig[] = []): void {
+    if (configs.length === 0) {
+      logger.warn('registerServers called with no configurations');
+      return;
+    }
+    for (const config of configs) {
+      this.servers.set(config.name, config);
+    }
+    logger.info(`Registered ${configs.length} server(s)`, {
+      servers: configs.map((c) => c.name),
+    });
   }
 
   /**
-   * (Coming Soon) Method to define and run an agent workflow.
+   * Define and run an agent workflow.
+   * @param workflowName - Name of the workflow to execute
+   * @param _options - Optional execution parameters
    */
-  public runWorkflow(workflowName: string) {
-    console.warn(`Workflow "${workflowName}" cannot be executed. Implementation pending.`);
+  public runWorkflow(
+    workflowName: string,
+    _options: WorkflowOptions = {}
+  ): void {
+    if (!workflowName) {
+      throw new Error('workflowName is required');
+    }
+    logger.warn(`Workflow "${workflowName}" is not yet implemented`);
+  }
+
+  public getRegisteredServers(): string[] {
+    return Array.from(this.servers.keys());
   }
 }
 
-// Main function to demonstrate the future usage
-function main() {
-  console.log("--------------------------------------------------");
-  console.log("Initializing MCP-Agent-Accelerator Framework...");
-  console.log("NOTE: This is a placeholder for the upcoming release.");
-  console.log("--------------------------------------------------");
-  
+function main(): void {
+  logger.info('Initializing MCP-Agent-Accelerator Framework');
+  logger.info('This is a pre-release placeholder pending full implementation');
+
   const accelerator = new AgentAccelerator();
-  
-  // Future implementation will look something like this:
-  // accelerator.registerServers(['github', 'filesystem']);
-  // accelerator.runWorkflow('code-review-workflow');
+
+  // Future usage:
+  // accelerator.registerServers([{ name: 'github' }, { name: 'filesystem' }]);
+  // accelerator.runWorkflow('code-review-workflow', { timeout: 30000 });
+
+  void accelerator;
 }
 
-// Execute the main function
 main();
 
 export default AgentAccelerator;
