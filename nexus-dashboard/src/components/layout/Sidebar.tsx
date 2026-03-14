@@ -20,7 +20,7 @@ export default function Sidebar() {
     <aside className="flex h-screen w-60 flex-col border-r border-[var(--border)] bg-[var(--surface)]">
       <div className="px-5 py-6">
         <Link href="/" className="text-base font-semibold tracking-tight text-[var(--text-1)] hover:text-[var(--accent)] transition-colors">
-          Nexus Intelligence
+          Agent Accelerator
         </Link>
       </div>
       <nav className="flex-1 px-3 pb-4">

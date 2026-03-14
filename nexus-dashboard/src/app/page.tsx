@@ -41,7 +41,7 @@ export default function Home() {
           MCP-Powered Intelligence
         </div>
         <h1 className="mb-4 text-5xl font-semibold tracking-tight text-[var(--text-1)]">
-          Nexus Intelligence
+          Agent Accelerator
         </h1>
         <p className="max-w-xl text-lg text-[var(--text-2)]">
           A production-ready AI dashboard connecting Web Search, CRM, and Data Warehouse
