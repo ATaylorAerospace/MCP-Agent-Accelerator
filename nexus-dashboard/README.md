@@ -72,9 +72,6 @@ npm run dev
 
 **A Taylor**
 
-*Claude Code was used as an AI coding tool during development.
-All code and intellectual property belongs to the author above.*
-
 ## License
 
 MIT © A Taylor
