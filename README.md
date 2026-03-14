@@ -4,7 +4,7 @@
 [![Stars](https://img.shields.io/github/stars/ATaylorAerospace/MCP-Agent-Accelerator?style=social)](https://github.com/ATaylorAerospace/MCP-Agent-Accelerator)
 [![Language](https://img.shields.io/badge/Languages-TypeScript%20%7C%20Python%20%7C%20Next.js-brightgreen)](https://github.com/ATaylorAerospace/MCP-Agent-Accelerator)
 
-A production-ready framework for building AI agents using the [Model Context Protocol (MCP)](https://www.anthropic.com/news/model-context-protocol), paired with a full-featured Next.js 14 intelligence dashboard. The accelerator eliminates integration boilerplate, provides robust agent orchestration, and ships with a working UI out of the box.
+A production ready framework for building AI agents using the [Model Context Protocol (MCP)](https://www.anthropic.com/news/model-context-protocol), paired with a full-featured Next.js 14 intelligence dashboard. The accelerator eliminates integration boilerplate, provides robust agent orchestration, and ships with a working UI out of the box.
 
 > 🚧 **Status:** Core framework stable · Dashboard live
 
