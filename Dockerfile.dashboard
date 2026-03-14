@@ -1,0 +1,52 @@
+# Agent Accelerator Dashboard — production Docker image
+# Next.js 14 standalone build with non-root user and minimal footprint.
+#
+# Build:
+#   docker build -f Dockerfile.dashboard -t agent-accelerator-dashboard .
+#
+# Run:
+#   docker run -p 3000:3000 \
+#     -e ANTHROPIC_API_KEY=sk-ant-... \
+#     agent-accelerator-dashboard
+
+# --- Stage 1: Install dependencies ---
+FROM node:18-alpine AS deps
+WORKDIR /app/nexus-dashboard
+
+COPY nexus-dashboard/package*.json ./
+RUN npm ci
+
+# --- Stage 2: Build the Next.js application ---
+FROM node:18-alpine AS builder
+WORKDIR /app/nexus-dashboard
+
+COPY --from=deps /app/nexus-dashboard/node_modules ./node_modules
+COPY nexus-dashboard/ .
+
+# Produce a standalone Next.js output for minimal image size
+ENV NEXT_TELEMETRY_DISABLED=1
+RUN npm run build
+
+# --- Stage 3: Production image ---
+FROM node:18-alpine AS runner
+WORKDIR /app
+
+ENV NODE_ENV=production
+ENV NEXT_TELEMETRY_DISABLED=1
+
+# Non-root user for security
+RUN addgroup -S appgroup && adduser -S appuser -G appgroup
+
+COPY --from=builder /app/nexus-dashboard/public ./public
+COPY --from=builder /app/nexus-dashboard/.next/standalone ./
+COPY --from=builder /app/nexus-dashboard/.next/static ./.next/static
+
+RUN chown -R appuser:appgroup /app
+USER appuser
+
+EXPOSE 3000
+
+ENV PORT=3000
+ENV HOSTNAME="0.0.0.0"
+
+CMD ["node", "server.js"]
