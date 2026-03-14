@@ -5,8 +5,8 @@ import "./globals.css";
 import Sidebar from "@/components/layout/Sidebar";
 
 export const metadata: Metadata = {
-  title: "Nexus Intelligence Dashboard",
-  description: "AI-powered intelligence dashboard with Web Search, CRM, and Data Warehouse modules.",
+  title: "Agent Accelerator Dashboard",
+  description: "AI-powered agent dashboard with Web Search, CRM, and Data Warehouse modules.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

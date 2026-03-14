@@ -1,4 +1,4 @@
-# Nexus Intelligence Dashboard
+# Agent Accelerator Dashboard
 
 A production-ready AI dashboard built with **Next.js 14**, **TypeScript**, and **Tailwind CSS**.
 It connects three intelligence modules through the Model Context Protocol (MCP):
