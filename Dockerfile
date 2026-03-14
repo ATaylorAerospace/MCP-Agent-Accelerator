@@ -1,5 +1,9 @@
+# MCP-Agent-Accelerator — core framework production image
 # Multi-stage build: TypeScript compilation and Python dependencies built
 # separately, then combined into a minimal production image.
+#
+# For the Agent Accelerator Dashboard (Next.js), use Dockerfile.dashboard instead:
+#   docker build -f Dockerfile.dashboard -t agent-accelerator-dashboard .
 
 # --- Stage 1: Build the TypeScript/Node.js application ---
 FROM node:18-alpine AS builder-node

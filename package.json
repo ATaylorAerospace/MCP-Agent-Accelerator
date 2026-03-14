@@ -16,7 +16,12 @@
     "format": "prettier --write 'src/**/*.ts'",
     "format:check": "prettier --check 'src/**/*.ts'",
     "clean": "rm -rf dist",
-    "prebuild": "npm run clean"
+    "prebuild": "npm run clean",
+    "dashboard": "cd nexus-dashboard && npm run dev",
+    "dashboard:build": "cd nexus-dashboard && npm run build",
+    "dashboard:start": "cd nexus-dashboard && npm run start",
+    "dashboard:install": "cd nexus-dashboard && npm install",
+    "dashboard:lint": "cd nexus-dashboard && npm run lint"
   },
   "keywords": [
     "ai",
@@ -24,9 +29,15 @@
     "mcp",
     "model-context-protocol",
     "automation",
-    "typescript"
+    "typescript",
+    "nextjs",
+    "dashboard",
+    "anthropic",
+    "claude",
+    "salesforce",
+    "data-warehouse"
   ],
-  "author": "ATaylorAerospace",
+  "author": "A Taylor",
   "license": "MIT",
   "devDependencies": {
     "@types/jest": "^29.5.0",
