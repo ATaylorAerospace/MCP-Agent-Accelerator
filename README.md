@@ -1,4 +1,4 @@
-# MCP-Agent-Accelerator
+# 🤖 MCP-Agent-Accelerator 🚀
 
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Stars](https://img.shields.io/github/stars/ATaylorAerospace/MCP-Agent-Accelerator?style=social)](https://github.com/ATaylorAerospace/MCP-Agent-Accelerator)
@@ -6,28 +6,28 @@
 
 A production-ready framework for building AI agents using the [Model Context Protocol (MCP)](https://www.anthropic.com/news/model-context-protocol), paired with a full-featured Next.js 14 intelligence dashboard. The accelerator eliminates integration boilerplate, provides robust agent orchestration, and ships with a working UI out of the box.
 
-> **Status:** Core framework stable · Dashboard live
+> 🚧 **Status:** Core framework stable · Dashboard live
 
 ---
 
-## The Problem
+## 🤔 The Problem
 
 Building AI agents is more than just connecting to an LLM. Developers face real hurdles when making agents interact with production tools:
 
-- **Complex Connections:** Every new tool requires a custom, brittle integration.
-- **Coordination Chaos:** Making multiple agents collaborate is a major challenge.
-- **Production Pitfalls:** Moving from demo to reliable, production-grade system is hard.
-- **Error Handling Hell:** Managing failures and retries across services is a nightmare.
+- **💥 Complex Connections:** Every new tool requires a custom, brittle integration.
+- **🌀 Coordination Chaos:** Making multiple agents collaborate is a major challenge.
+- **⚠️ Production Pitfalls:** Moving from demo to reliable, production-grade system is hard.
+- **🔥 Error Handling Hell:** Managing failures and retries across services is a nightmare.
 
 ---
 
-## The Solution
+## 💡 The Solution
 
 **MCP-Agent-Accelerator** provides the infrastructure layer that handles complex integrations, allowing focus on unique agent logic and business value. The included **Agent Accelerator Dashboard** delivers a working AI interface immediately — no UI build required.
 
 ---
 
-## Repository Layout
+## 📁 Repository Layout
 
 ```
 MCP-Agent-Accelerator/
@@ -47,17 +47,17 @@ MCP-Agent-Accelerator/
 
 ---
 
-## Agent Accelerator Dashboard
+## 🖥️ Agent Accelerator Dashboard
 
 The `nexus-dashboard/` directory contains a production-ready Next.js 14 web application with three intelligence modules:
 
 | Module | Status | Description |
 |---|---|---|
-| Web Search | Live | Real-time web search powered by Anthropic's `web_search` tool |
-| CRM | Needs Setup | Salesforce contact list + Kanban pipeline — MCP stub ready to activate |
-| Data Warehouse | Needs Setup | Natural-language queries over Snowflake/BigQuery — MCP stub ready to activate |
+| 🔍 Web Search | ✅ Live | Real-time web search powered by Anthropic's `web_search` tool |
+| 👥 CRM | ⚠️ Needs Setup | Salesforce contact list + Kanban pipeline — MCP stub ready to activate |
+| 🗄️ Data Warehouse | ⚠️ Needs Setup | Natural-language queries over Snowflake/BigQuery — MCP stub ready to activate |
 
-**Dashboard quick start:**
+**⚡ Dashboard quick start:**
 
 ```bash
 cd nexus-dashboard
@@ -75,7 +75,7 @@ npm run dashboard:install
 npm run dashboard
 ```
 
-### Activating CRM (Salesforce MCP)
+### 🔗 Activating CRM (Salesforce MCP)
 
 In `nexus-dashboard/.env.local`:
 
@@ -86,7 +86,7 @@ SALESFORCE_CONNECTED=true
 
 Restart the server. The CRM page will route live prompts through the MCP server.
 
-### Activating Data Warehouse (Snowflake / BigQuery MCP)
+### 🗄️ Activating Data Warehouse (Snowflake / BigQuery MCP)
 
 In `nexus-dashboard/.env.local`:
 
@@ -99,16 +99,16 @@ Restart the server. Natural-language queries will be sent to the MCP server.
 
 ---
 
-## Core Framework Capabilities
+## ✨ Core Framework Capabilities
 
-- **Universal Tool Integration:** Connect to anything with an MCP server. Pre-configured connections for GitHub, databases, and local file systems.
-- **Advanced Multi-Agent Orchestration:** Sophisticated workflows with teams of specialized agents that collaborate to solve complex problems.
-- **Production-Ready from Day One:** Comprehensive logging (Winston), monitoring hooks, and full type safety throughout.
-- **Containerized and Scalable:** Docker multi-stage builds for both the framework and the dashboard.
+- **🔧 Universal Tool Integration:** Connect to anything with an MCP server. Pre-configured connections for GitHub, databases, and local file systems.
+- **🤝 Advanced Multi-Agent Orchestration:** Sophisticated workflows with teams of specialized agents that collaborate to solve complex problems.
+- **⚡ Production-Ready from Day One:** Comprehensive logging (Winston), monitoring hooks, and full type safety throughout.
+- **📦 Containerized and Scalable:** Docker multi-stage builds for both the framework and the dashboard.
 
 ---
 
-## Framework Example Usage
+## ▶️ Framework Example Usage
 
 ```typescript
 import AgentAccelerator, { ServerConfig, WorkflowOptions } from './src/main';
@@ -129,17 +129,17 @@ accelerator.runWorkflow("code-review-workflow", options);
 
 ---
 
-## Getting Started
+## 🏁 Getting Started
 
 ### Prerequisites
 
-- Node.js 18+
-- npm 8+
-- Anthropic API Key (for the dashboard and Anthropic-powered workflows)
-- GitHub Token (for GitHub MCP integration)
-- Docker (optional)
+- ✅ Node.js 18+
+- ✅ npm 8+
+- ✅ Anthropic API Key (for the dashboard and Anthropic-powered workflows)
+- ✅ GitHub Token (for GitHub MCP integration)
+- ✅ Docker (optional)
 
-### Framework Setup
+### 🛠️ Framework Setup
 
 ```bash
 # Clone the repository
@@ -162,7 +162,7 @@ npm test
 npm run test:coverage
 ```
 
-### Dashboard Setup
+### 🖥️ Dashboard Setup
 
 ```bash
 # Install dashboard dependencies
@@ -177,48 +177,48 @@ npm run dashboard:build
 
 ---
 
-## Technology Stack
+## 🛠️ Technology Stack
 
 | Layer | Technology |
 |---|---|
-| Framework languages | TypeScript, Python |
-| Dashboard | Next.js 14 (App Router), React 18, Tailwind CSS |
-| AI provider | Anthropic (`claude-sonnet-4-20250514`) |
-| Protocols | MCP, gRPC, REST |
-| Icons | Lucide React |
-| Fonts | DM Sans, JetBrains Mono |
-| Logging | Winston (structured JSON) |
-| Testing | Jest + ts-jest |
-| Infrastructure | Docker, Kubernetes |
+| 🔤 Framework languages | TypeScript, Python |
+| 🖥️ Dashboard | Next.js 14 (App Router), React 18, Tailwind CSS |
+| 🤖 AI provider | Anthropic (`claude-sonnet-4-20250514`) |
+| 📡 Protocols | MCP, gRPC, REST |
+| 🎨 Icons | Lucide React |
+| 🔤 Fonts | DM Sans, JetBrains Mono |
+| 📋 Logging | Winston (structured JSON) |
+| 🧪 Testing | Jest + ts-jest |
+| 🐳 Infrastructure | Docker, Kubernetes |
 
 ---
 
-## Architecture
+## 🏛️ Architecture
 
 The project separates concerns across two distinct layers:
 
-**Framework core (`src/`)** — Protocol-agnostic agent orchestration. The `AgentAccelerator` class handles MCP server registration, workflow routing, and structured logging. Python and TypeScript implementations share the same interface contract.
+**⚙️ Framework core (`src/`)** — Protocol-agnostic agent orchestration. The `AgentAccelerator` class handles MCP server registration, workflow routing, and structured logging. Python and TypeScript implementations share the same interface contract.
 
-**Dashboard (`nexus-dashboard/`)** — A Next.js 14 App Router application that consumes the Anthropic SDK directly from API routes and connects to MCP-enabled services (Salesforce, Snowflake/BigQuery) via environment-gated server stubs. The UI uses a dark design system built on CSS custom properties, Tailwind CSS, and a shared component library.
+**🖥️ Dashboard (`nexus-dashboard/`)** — A Next.js 14 App Router application that consumes the Anthropic SDK directly from API routes and connects to MCP-enabled services (Salesforce, Snowflake/BigQuery) via environment-gated server stubs. The UI uses a dark design system built on CSS custom properties, Tailwind CSS, and a shared component library.
 
 ---
 
-## Contributing
+## 🙏 Contributing
 
 Contributions of all kinds are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
-- **New Connectors:** Help integrate more tools via MCP.
-- **Orchestration Patterns:** Share workflow ideas.
-- **Dashboard Modules:** Add new intelligence panels.
-- **Examples and Docs:** Improve developer experience.
-- **Performance Tuning:** Make the framework faster and more efficient.
+- **🔌 New Connectors:** Help integrate more tools via MCP.
+- **🤝 Orchestration Patterns:** Share workflow ideas.
+- **🖥️ Dashboard Modules:** Add new intelligence panels.
+- **📖 Examples and Docs:** Improve developer experience.
+- **🚀 Performance Tuning:** Make the framework faster and more efficient.
 
 ---
 
-## Author
+## 👤 Author
 
 **A Taylor**
 
-## License
+## 📄 License
 
 MIT © A Taylor
